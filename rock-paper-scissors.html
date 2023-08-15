@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCK PAPER SCISSORS GAME</title>
+</head>
+<style>
+    .bg{
+        background-color: black;
+    }
+    p{
+        color: rgb(255, 0, 0);
+        font-family: 'Times New Roman', Times, serif;
+        text-decoration: underline;
+    }
+    .rock{
+        height: 250px;
+        width: 250px;
+        border-radius: 150px;
+        background-image: url(https://cdn5.vectorstock.com/i/1000x1000/16/59/rock-stone-boulders-cartoon-isometric-vector-35351659.jpg);
+        background-size: cover;
+        font-weight: bolder;
+        color: rgb(255, 0, 0);
+    }
+        
+    .paper{
+        height: 250px;
+        width: 250px;
+        border-radius: 150px;
+        background-image: url(https://static.vecteezy.com/system/resources/previews/011/081/807/original/notebook-sheet-white-blank-page-paper-list-from-notepad-flat-cartoon-icon-vector.jpg);
+        background-size: cover;
+        font-weight: bolder;
+        
+        color: rgb(255, 0, 0);
+    }
+    .scissor{
+        height: 250px;
+        width: 250px;
+        border-radius: 150px;
+        background-image: url(https://media.istockphoto.com/id/518699616/vector/scissors-icon.jpg?s=612x612&w=0&k=20&c=iCv3iqg-tgGz5NaasRRFTKW89--WRRSYsi4aYrkf0JM=);
+        background-size: cover;
+        font-weight: bolder;
+        color: rgb(255, 0, 0);}
+</style>
+<body class="bg">
+    <p><b><i>ROCK PAPER SCISSORS GAME</i></b></p>
+
+    <button class="rock" onclick="
+        let input = 0;
+        console.log('you chose rock!')
+        rps(input);
+    " >ROCK</button>
+
+    <button class="paper" onclick="
+       input = 1;
+        console.log('you chose paper!')
+        rps(input);
+    ">PAPER</button>
+
+    <button class="scissor" onclick="
+         input = 2;
+        console.log('you chose scissor!')
+        rps(input);
+    ">SCISSORS</button>
+
+    <script>
+        function rps(user) {
+            const random = Math.random();
+            const rock = 0;
+            const paper = 1;
+            const scissor = 2;
+
+            let comp;
+
+            if (random >= 0 && random < 1 / 3) {
+                console.log('Computer chose rock');
+                comp = rock;
+            } else if (random >= 1 / 3 && random < 2 / 3) {
+                console.log('Computer chose paper');
+                comp = paper;
+            } else {
+                console.log('Computer chose scissor');
+                comp = scissor;
+            }
+
+            
+
+            if (user === comp) {
+                console.log('It\'s a tie!');
+                alert('It\'s a tie!');
+            } else if (user === rock) {
+                if (comp === paper) {
+                    console.log('Computer wins!');
+                    alert('Computer wins!')
+                } else {
+                    alert('You win!');
+                    console.log('You win!');
+                }
+            } else if (user === paper) {
+                if (comp === rock) {
+                    console.log('You win!');
+                    alert('You win!');
+                } else {
+                    console.log('Computer wins!');
+                    alert('Computer wins!');
+                }
+            } else if (user === scissor) {
+                if (comp === rock) {
+                    console.log("Computer wins!");
+                    alert('Computer wins!');
+                } else {
+                    console.log('You win!');
+                    alert('You win!');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
